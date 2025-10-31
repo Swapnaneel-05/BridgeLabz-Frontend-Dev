@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+  font-family: sans-serif;
+  padding: 20px;
+}
+
+.pricing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  animation: fadeIn 1s ease;
+}
+
+.card {
+  background: #f4f4f4;
+  padding: 30px;
+  border-radius: 8px;
+  text-align: center;
+  width: 200px;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.highlight {
+  background: #ffe08a;
+  transform: scale(1.1);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+    </style>
+</head>
+<body>
+    <section class="pricing">
+    <div class="card">Basic<br>$10/month</div>
+    <div class="card highlight">Pro<br>$20/month</div>
+    <div class="card">Premium<br>$30/month</div>
+  </section>
+</body>
+</html>
