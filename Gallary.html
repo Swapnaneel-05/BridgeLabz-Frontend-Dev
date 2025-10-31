@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+  font-family: sans-serif;
+  padding: 20px;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+
+.card {
+  background: #f4f4f4;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 150px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+    </style>
+</head>
+<body>
+    <div class="gallery">
+    <div class="card">
+      <h3>Product 1</h3>
+      <p>$20</p>
+    </div>
+    <div class="card">
+      <h3>Product 2</h3>
+      <p>$25</p>
+    </div>
+    <div class="card">
+      <h3>Product 3</h3>
+      <p>$30</p>
+    </div>
+    <div class="card">
+      <h3>Product 4</h3>
+      <p>$35</p>
+    </div>
+    <div class="card">
+      <h3>Product 5</h3>
+      <p>$40</p>
+    </div>
+    <div class="card">
+      <h3>Product 6</h3>
+      <p>$45</p>
+    </div>
+    <div class="card">
+      <h3>Product 7</h3>
+      <p>$50</p>
+    </div>
+    <div class="card">
+      <h3>Product 8</h3>
+      <p>$55</p>
+    </div>
+  </div>
+</body>
+</html>
