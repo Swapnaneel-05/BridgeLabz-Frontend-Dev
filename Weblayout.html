@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Flexbox and Grid Layout</title>
+  <style>body {
+  font-family: sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #222;
+  color: white;
+  padding: 15px 30px;
+}
+
+header nav a {
+  color: white;
+  margin-left: 15px;
+  text-decoration: none;
+}
+
+/* Main area */
+main {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  padding: 20px;
+  flex: 1;
+}
+
+article {
+  background: #f9f9f9;
+  padding: 20px;
+}
+
+aside {
+  background: #e3e3e3;
+  padding: 20px;
+}
+
+/* Boxes inside article */
+.boxes {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.box {
+  background: #ccc;
+  padding: 20px;
+  flex: 1;
+  margin: 0 10px;
+  text-align: center;
+  border-radius: 6px;
+}
+
+/* Animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animated-title {
+  animation: fadeUp 1.2s ease-in-out;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Footer */
+footer {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+}</style>
+</head>
+<body>
+  <header>
+    <div class="logo">MyLogo</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <article>
+      <h1 class="animated-title">Welcome to My Page</h1>
+      <div class="boxes">
+        <div class="box">Box 1</div>
+        <div class="box">Box 2</div>
+        <div class="box">Box 3</div>
+      </div>
+    </article>
+    <aside>
+      <h2>Sidebar</h2>
+      <p>Some extra content here.</p>
+    </aside>
+  </main>
+
+  <footer>
+    <p>My Website</p>
+  </footer>
+</body>
+</html>
