@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gradient Page</title>
+<style>
+body{margin:0;font-family:sans-serif;color:#fff;text-align:center;}
+header,footer{background:#111;padding:20px;position:fixed;width:100%;left:0;color:#fff;}
+header{top:0;}footer{bottom:0;}
+section{height:100vh;display:flex;justify-content:center;align-items:center;flex-direction:column;}
+.linear{background:linear-gradient(135deg,orange,purple);}
+.radial{background:radial-gradient(circle,skyblue,navy);background-attachment:fixed;}
+</style>
+</head>
+<body>
+<header>Fixed Header</header>
+<section class="linear"><h1>Linear Gradient</h1></section>
+<section class="radial"><h1>Radial Gradient (Parallax Effect)</h1></section>
+<footer>Fixed Footer</footer>
+</body>
+</html>
