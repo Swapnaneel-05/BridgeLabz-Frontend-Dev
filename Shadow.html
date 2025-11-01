@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shadows</title>
+<style>
+body{display:flex;justify-content:center;align-items:center;min-height:100vh;gap:30px;background:#eee;font-family:sans-serif;}
+.card{width:200px;padding:20px;background:#fff;text-align:center;box-shadow:0 2px 5px rgba(0,0,0,0.2);transition:0.3s;}
+.card h3{text-shadow:1px 1px 2px gray;}
+.card:hover{transform:translateY(-10px);box-shadow:0 8px 15px rgba(0,0,0,0.3);}
+</style>
+</head>
+<body>
+<div class="card"><h3>Profile 1</h3><p>Sample text</p></div>
+<div class="card"><h3>Profile 2</h3><p>Sample text</p></div>
+<div class="card"><h3>Profile 3</h3><p>Sample text</p></div>
+</body>
+</html>
