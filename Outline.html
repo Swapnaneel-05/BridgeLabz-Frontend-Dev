@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form Outline</title>
+<style>
+body{display:flex;justify-content:center;align-items:center;min-height:100vh;background:#f0f0f0;font-family:sans-serif;}
+form{display:flex;flex-direction:column;gap:15px;width:300px;}
+input,textarea{padding:10px;border-radius:5px;border:1px solid #ccc;outline:2px solid transparent;transition:0.3s;}
+input:focus,textarea:focus{outline-color:teal;outline-offset:4px;}
+button{padding:10px;border:none;background:teal;color:#fff;border-radius:5px;cursor:pointer;}
+</style>
+</head>
+<body>
+<form>
+<input type="text" placeholder="Name">
+<input type="email" placeholder="Email">
+<textarea rows="3" placeholder="Message"></textarea>
+<button>Submit</button>
+</form>
+</body>
+</html>
