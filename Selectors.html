@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Selectors</title>
+<style>
+ul li:nth-child(odd){background:#f0f0f0;}
+input[type="text"]{border:2px solid teal;}
+a[href^="https"]{color:green;}
+li:hover{background:yellow;}
+li::before{content:"• ";color:red;}
+p + ul{border:1px dashed gray;}
+h2 ~ p{color:gray;}
+</style>
+</head>
+<body>
+<h2>Selectors Demo</h2>
+<p>Hover list items or links</p>
+<ul>
+<li><a href="https://example.com">Secure Link</a></li>
+<li><a href="http://example.com">Normal Link</a></li>
+<li><input type="text" placeholder="Text input"></li>
+</ul>
+</body>
+</html>
