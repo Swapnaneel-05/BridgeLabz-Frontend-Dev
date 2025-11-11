@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{  
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+            background-color: lightgoldenrodyellow;
+            margin: 10px;
+            padding: 10px;
+        }
+        .container{
+            border: 2px solid black;
+        }
+
+        p:hover{
+            color: crimson;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); 
+        }
+        input:focus{
+            background-color: lightpink;
+        }
+        button:active{
+            background-color: darkgoldenrod;
+        }
+        li:nth-child(odd){
+            background-color: azure;
+        }
+
+        li:nth-child(even){
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>Hover</h3>
+        <p>Hover me</p></div>
+    <div class="container">
+        <h3>Focus</h3>
+        <input type="text" placeholder="Click to Focus">
+    </div>
+    <div class="container">
+        <h3>Active</h3>
+        <button>activate</button>
+    </div>
+    <div class="container">
+        <h3>nth-child</h3>
+        <li>item-1</li>
+        <li>item-2</li>
+        <li>item-3</li>
+        <li>item-4</li>
+    </div>
+
+</body>
+</html>
