@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tooltip Demonstration</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #f9fafb;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      display: flex;
+      gap: 60px;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .tooltip {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+      font-size: 20px;
+      font-weight: 500;
+      color: #333;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .tooltip:hover {
+      transform: translateY(-3px);
+    }
+
+    /* Tooltip text */
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      opacity: 0;
+      width: 160px;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 8px;
+      position: absolute;
+      bottom: 130%; /* position tooltip above the element */
+      left: 50%;
+      transform: translateX(-50%);
+      transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+      z-index: 1;
+    }
+
+    /* Small arrow */
+    .tooltip .tooltiptext::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: #333 transparent transparent transparent;
+    }
+
+    /* Show tooltip on hover */
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="tooltip">💡
+      <span class="tooltiptext">This is a light bulb icon!</span>
+    </div>
+
+    <div class="tooltip">🔍
+      <span class="tooltiptext">Search for something new!</span>
+    </div>
+
+    <div class="tooltip">❤️
+      <span class="tooltiptext">You liked this!</span>
+    </div>
+
+    <div class="tooltip">🧠
+      <span class="tooltiptext">Smart choice!</span>
+    </div>
+
+    <div class="tooltip">Hover Me
+      <span class="tooltiptext">I’m a text tooltip!</span>
+    </div>
+  </div>
+</body>
+</html>
