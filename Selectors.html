@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Selectors Practice Page</title>
+  <style>
+    /* --- Global Styles --- */
+    body {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f9fafb;
+      color: #333;
+    }
+
+    header, footer {
+      background-color: #007BFF;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    main {
+      margin: 30px 0;
+    }
+
+    /* --- Element Selector --- */
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+      padding: 8px;
+      background: #fff;
+      border-radius: 5px;
+      margin: 10px 0;
+    }
+
+    /* --- Class Selector --- */
+    .highlight {
+      background-color: #fff3cd;
+      border-left: 4px solid #ffeb3b;
+      padding: 8px;
+    }
+
+    /* --- ID Selector --- */
+    #special {
+      color: #d32f2f;
+      font-weight: bold;
+    }
+
+    /* --- Attribute Selector --- */
+    a[target="_blank"] {
+      color: #4CAF50;
+      text-decoration: underline;
+    }
+
+    /* --- Combinators --- */
+    /* Descendant selector */
+    div p {
+      color: #555;
+    }
+
+    /* Child selector */
+    div > p {
+      color: #1e88e5;
+    }
+
+    /* Adjacent sibling selector */
+    h3 + p {
+      font-style: italic;
+      color: #ff5722;
+    }
+
+    /* General sibling selector */
+    h3 ~ ul {
+      background: #e3f2fd;
+      border-radius: 5px;
+      padding: 10px;
+    }
+
+    footer {
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>CSS Selectors Practice Page</h1>
+  </header>
+
+  <main>
+    <h3>Types of CSS Selectors</h3>
+
+    <p>This is a <strong>paragraph</strong> styled using an element selector.</p>
+
+    <p class="highlight">This uses a <strong>class selector</strong> with a yellow background.</p>
+
+    <p id="special">This uses an <strong>ID selector</strong> with red text.</p>
+
+    <p>Here is a <a href="https://example.com" target="_blank">link with an attribute selector</a>.</p>
+
+    <div>
+      <h3>Combinator Selectors Example</h3>
+      <p>This paragraph is a child of a div — styled in blue.</p>
+      <ul>
+        <li>Descendant selector applies gray text</li>
+        <li>Child selector applies blue color to direct children</li>
+      </ul>
+    </div>
+  </main>
+
+  <footer>
+    <p>Created by Swapnaneel — CSS Selectors Demo</p>
+  </footer>
+</body>
+</html>
