@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #dfe9f3, #ffffff);
+  font-family: Poppins, sans-serif;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0px 6px 20px rgba(0,0,0,0.15);
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Shared input styles */
+input, select, button {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  transition: 0.3s ease;
+}
+
+/* Focus effect */
+input:focus, select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 4px #007bff;
+}
+
+/* Buttons */
+button {
+  background: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+</style>
+</head>
+<body>
+
+<div class="card">
+  <input type="text" placeholder="Search…">
+
+  <select>
+    <option>Select Option</option>
+    <option>UI</option>
+    <option>Frontend</option>
+  </select>
+
+  <button>Search</button>
+</div>
+
+</body>
+</html>
