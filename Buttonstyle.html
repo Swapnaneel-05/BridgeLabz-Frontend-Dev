@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Styled Button Collection</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #f4f6f8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .button-container {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    /* Base Button Style */
+    button {
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Primary Button */
+    .btn-primary {
+      background-color: #007BFF;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background-color: #0056b3;
+    }
+
+    .btn-primary:active {
+      background-color: #00408d;
+    }
+
+    /* Secondary Button */
+    .btn-secondary {
+      background-color: #6c757d;
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      background-color: #5a6268;
+    }
+
+    .btn-secondary:active {
+      background-color: #444b50;
+    }
+
+    /* Outline Button */
+    .btn-outline {
+      background-color: transparent;
+      border: 2px solid #007BFF;
+      color: #007BFF;
+    }
+
+    .btn-outline:hover {
+      background-color: #007BFF;
+      color: white;
+    }
+
+    .btn-outline:active {
+      background-color: #0056b3;
+      border-color: #0056b3;
+    }
+
+    /* Disabled Button */
+    .btn-disabled {
+      background-color: #ccc;
+      color: #777;
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+
+    /* Focus State */
+    button:focus {
+      outline: 3px solid #80bdff;
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Styled Button Collection</h1>
+  <div class="button-container">
+    <button class="btn-primary">Primary</button>
+    <button class="btn-secondary">Secondary</button>
+    <button class="btn-outline">Outline</button>
+    <button class="btn-disabled" disabled>Disabled</button>
+  </div>
+
+</body>
+</html>
