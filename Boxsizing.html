@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Box-Sizing Comparison</title>
+  <style>
+    body {
+      font-family: Poppins, sans-serif;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .container {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .box {
+      width: 200px;
+      padding: 30px;
+      background: #e3f2fd;
+      border: 5px solid #1565c0;
+    }
+
+    .borderBox {
+      background: #ffe0b2;
+      border: 5px solid #ff9800;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Box-Sizing Comparison</h1>
+  <p>Both boxes have equal width and padding. One uses <b>content-box</b> and the other uses <b>border-box</b>.</p>
+
+  <div class="container">
+    <div class="box">Default: content-box</div>
+    <div class="box borderBox">Using border-box</div>
+  </div>
+</body>
+</html>
