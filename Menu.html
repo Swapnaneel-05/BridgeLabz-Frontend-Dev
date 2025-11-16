@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Menu - Bootstrap Components</title>
+
+  <!-- Bootstrap CDN -->
+  <link 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet">
+</head>
+
+<body class="bg-light text-dark">
+
+  <div class="container py-5">
+
+    <!-- HEADER -->
+    <header class="text-center mb-4">
+      <h1 class="fw-bold">Today's Menu</h1>
+      <p class="lead text-secondary">Fresh • Delicious • Crafted with Love</p>
+    </header>
+
+    <!-- FOOD IMAGE + CAPTION -->
+    <div class="text-center mb-5">
+      <img src="https://picsum.photos/600/300?food" class="img-fluid rounded shadow" alt="">
+      <p class="mt-2 fw-semibold">Our Signature Dish of the Day</p>
+    </div>
+
+    <!-- MENU TABLE -->
+    <h3 class="fw-bold mb-3">Menu Items</h3>
+    <div class="table-responsive mb-5">
+      <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+          <tr>
+            <th>Item</th>
+            <th>Category</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Margherita Pizza</td><td>Main Course</td><td>$12.99</td></tr>
+          <tr><td>Caesar Salad</td><td>Starter</td><td>$8.49</td></tr>
+          <tr><td>Chicken Alfredo</td><td>Main Course</td><td>$14.99</td></tr>
+          <tr><td>Tiramisu</td><td>Dessert</td><td>$6.99</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- CHEF'S SPECIALS -->
+    <h3 class="fw-bold mb-3">Chef's Specials</h3>
+    <ul class="list-group mb-4">
+      <li class="list-group-item">Grilled Salmon with Lemon Butter</li>
+      <li class="list-group-item">Stuffed Mushroom Platter</li>
+      <li class="list-group-item">Pan-Seared Steak with Garlic Sauce</li>
+    </ul>
+
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script 
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
+  </script>
+
+</body>
+</html>
