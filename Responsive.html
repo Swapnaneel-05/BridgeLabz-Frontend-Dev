@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Responsive CSS Cheat Sheet</title>
+  <style>
+    :root{
+      --gap:18px;
+      --card-radius:10px;
+      --bg:#fbfdff;
+      --accent:#0b6cff;
+      --muted:#4b5563;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial;background:var(--bg);color:#0b1220}
+    .wrap{max-width:1100px;margin:40px auto;padding:20px}
+
+    header{ text-align:center;margin-bottom:18px }
+    header h1{ margin:0;font-size:clamp(1.2rem,2.8vw,1.8rem) }
+    header p{ margin:8px 0 0;color:var(--muted) }
+
+    /* Grid layout for boxes */
+    .grid{
+      display:grid;
+      gap:var(--gap);
+      grid-template-columns: repeat(3, 1fr);
+      align-items:start;
+      margin-top:24px;
+    }
+
+    .item{
+      background:#fff;
+      border-radius:var(--card-radius);
+      padding:16px;
+      box-shadow: 0 8px 24px rgba(10,20,40,0.06);
+      transition: transform .22s ease, box-shadow .22s ease, background .22s ease;
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
+
+    .item:hover{
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(10,20,40,0.12);
+      background: linear-gradient(180deg, #ffffff, #f6fbff);
+    }
+
+    .term{
+      font-weight:700;
+      color:var(--accent);
+      font-size:1rem;
+    }
+
+    .desc{
+      color:var(--muted);
+      font-size:.95rem;
+      line-height:1.45;
+    }
+
+    /* Large screens: 2–3 columns (already 3) — make 2 columns for medium */
+    @media (max-width: 1000px){
+      .grid{ grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* Small screens: below 700px — stacked rows where heading acts as key followed by value */
+    @media (max-width:700px){
+      .grid{
+        grid-template-columns: 1fr;
+      }
+      .item{
+        display:flex;
+        flex-direction:row;
+        gap:12px;
+        align-items:flex-start;
+        padding:12px;
+      }
+      .term{
+        min-width:120px;
+        flex-shrink:0;
+        font-size:.95rem;
+        color:#0f1724;
+      }
+      .desc{ flex:1; font-size:.94rem }
+    }
+
+    /* small visual tweaks */
+    footer{ text-align:center;margin-top:28px;color:var(--muted);font-size:.95rem }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Responsive CSS Cheat Sheet</h1>
+      <p>Quick reference for Filters, Media Queries, Responsive Design & Typography</p>
+    </header>
+
+    <section class="grid" aria-label="Cheat sheet grid">
+      <article class="item">
+        <div class="term">Filters</div>
+        <div class="desc">
+          <strong>Example:</strong> <code>filter: grayscale(100%);</code><br>
+          Use filters to adjust images or elements. Combine with transitions for smooth effects.
+        </div>
+      </article>
+
+      <article class="item">
+        <div class="term">Media Queries</div>
+        <div class="desc">
+          <strong>Example:</strong> <code>@media (max-width: 900px) { ... }</code><br>
+          Media queries adapt layout and styles across breakpoints (mobile, tablet, desktop).
+        </div>
+      </article>
+
+      <article class="item">
+        <div class="term">Responsive Design</div>
+        <div class="desc">
+          <strong>Tip:</strong> Use <code>flex</code> and <code>grid</code> with relative units to build flexible layouts that adapt.
+        </div>
+      </article>
+
+      <article class="item">
+        <div class="term">Typography</div>
+        <div class="desc">
+          <strong>Example:</strong> <code>font-size: clamp(1rem, 2.5vw, 1.25rem);</code><br>
+          Scale type fluidly to maintain readability across devices.
+        </div>
+      </article>
+
+      <article class="item">
+        <div class="term">Breakpoints</div>
+        <div class="desc">
+          Common breakpoints: <code>1200px, 900px, 700px, 480px</code>. Pick breakpoints based on content, not device names.
+        </div>
+      </article>
+
+      <article class="item">
+        <div class="term">Accessibility</div>
+        <div class="desc">
+          Ensure focus states, semantic markup, and enough color contrast. Test keyboard navigation and screen readers.
+        </div>
+      </article>
+    </section>
+
+    <footer>Tip: Resize the viewport to see the layout change — headings become keys and descriptions become values below 700px.</footer>
+  </div>
+</body>
+</html>
