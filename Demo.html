@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Combined Responsive Web Demo</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: #f3f5f9;
+      color: #1a1f26;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 25px;
+      background: white;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+
+    header .logo {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #1060ff;
+    }
+
+    header nav a {
+      margin-left: 18px;
+      text-decoration: none;
+      color: #555;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    header nav a:hover {
+      color: #1060ff;
+    }
+
+    /* Main Grid */
+    .main-grid {
+      display: grid;
+      padding: 40px 25px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      animation: fadeIn 0.6s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    section {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease;
+    }
+
+    section:hover {
+      transform: translateY(-6px);
+    }
+
+    h2 {
+      margin-bottom: 15px;
+      font-size: 1.3rem;
+      color: #0a3c7c;
+    }
+
+    /* Image Gallery inside section 1 */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 8px;
+      transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Cheat sheet preview small grid */
+    .cheat-preview {
+      display: grid;
+      gap: 10px;
+    }
+
+    .box {
+      padding: 10px;
+      border-radius: 8px;
+      background: #e9f1ff;
+      color: #1b3b78;
+      box-shadow: inset 0 0 0 1px #c7dcff;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: white;
+      color: #555;
+      margin-top: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.08);
+    }
+
+    /* Responsive — Below 700px stack vertically */
+    @media (max-width: 700px) {
+      .main-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">Responsive Demo</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Gallery</a>
+      <a href="#">Docs</a>
+    </nav>
+  </header>
+
+  <!-- MAIN GRID -->
+  <main class="main-grid">
