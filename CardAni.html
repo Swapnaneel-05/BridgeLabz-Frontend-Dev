@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Filter Cards with Animation</title>
+  <style>
+    :root{
+      --gap:20px;
+      --card-bg:#ffffff;
+      --muted:#51607a;
+      --radius:12px;
+      --shadow: 0 10px 30px rgba(10,20,40,0.08);
+    }
+
+    /* Baseline */
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial;background:#f6f8fb;color:#0b1220;}
+    .wrap{max-width:1100px;margin:40px auto;padding:20px;}
+
+    h1{text-align:center;margin:0 0 12px;font-size:clamp(1.25rem,2.5vw,1.75rem)}
+    p.lead{text-align:center;color:var(--muted);margin:0 0 28px}
+
+    /* Fade-in animation used on load */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Cards container — Flexbox */
+    .cards {
+      display:flex;
+      gap:var(--gap);
+      align-items:stretch;
+      justify-content:center;
+      animation: fadeInUp 600ms ease-in-out both;
+    }
+
+    .card {
+      background: var(--card-bg);
+      width: 32%;
+      min-width: 240px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: transform .28s ease, box-shadow .28s ease;
+      display:flex;
+      flex-direction:column;
+    }
+
+    /* Image area — applying filter */
+    .card .photo {
+      position:relative;
+      width:100%;
+      height:0;
+      padding-bottom:66.66%;
+      overflow:hidden;
+      background:#eee;
+    }
+
+    .card img{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      transition: filter .35s ease, transform .35s ease;
+      will-change: filter, transform;
+    }
+
+    /* Different filters per card (example: grayscale, sepia, hue-rotate) */
+    .card.card-1 img { filter: grayscale(100%); }
+    .card.card-2 img { filter: sepia(80%); }
+    .card.card-3 img { filter: contrast(110%) brightness(.8) hue-rotate(20deg); }
+
+    /* Card content */
+    .meta {
+      padding:16px;
+      display:flex;
+      gap:12px;
+      align-items:center;
+    }
+    .avatar{
+      width:56px;height:56px;border-radius:10px;flex-shrink:0;overflow:hidden;background:#ddd;
+    }
+    .meta .info{flex:1}
+    .meta h3{margin:0;font-size:1rem;color:#0b1220}
+    .meta p{margin:4px 0 0;color:var(--muted);font-size:.9rem}
+
+    /* Hover: remove filter and lift card */
+    .card:hover{
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(10,20,40,0.14);
+    }
+    .card:hover img{
+      filter: none !important;
+      transform: scale(1.03);
+    }
+
+    /* Add small animation delay differences for stagger */
+    .card-1{ animation: fadeInUp 600ms ease-in-out both; animation-delay: 0ms; }
+    .card-2{ animation: fadeInUp 600ms ease-in-out both; animation-delay: 120ms; }
+    .card-3{ animation: fadeInUp 600ms ease-in-out both; animation-delay: 240ms; }
+
+    /* Responsive: stack vertically below 800px */
+    @media (max-width: 800px) {
+      .cards{ flex-direction:column; }
+      .card{ width:100%; }
+      .wrap{ padding:12px; }
+    }
+
+    /* Accessibility focus state for keyboard users */
+    .card:focus-within{ outline: 3px solid rgba(11,108,255,0.12); outline-offset:4px; }
+    .card a{ text-decoration:none;color:inherit;display:block; }
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Profile Cards — Filters & Animation</h1>
+    <p class="lead">Each card image starts with a filter. Hover to remove the filter and lift the card. Cards fade in on load.</p>
+
+    <section class="cards" aria-label="Profile cards">
+      <!-- Card 1 -->
+      <article class="card card-1">
+        <div class="photo">
+          <img src="https://picsum.photos/id/1005/1200/800" alt="Profile photo 1">
+        </div>
+        <div class="meta">
+          <div class="avatar" aria-hidden="true">
+            <img src="https://picsum.photos/id/1005/200/200" alt="Avatar 1" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="info">
+            <h3>Priya Kapoor</h3>
+            <p>Frontend Engineer — loves accessible interfaces and performance.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="card card-2">
+        <div class="photo">
+          <img src="https://picsum.photos/id/1011/1200/800" alt="Profile photo 2">
+        </div>
+        <div class="meta">
+          <div class="avatar" aria-hidden="true">
+            <img src="https://picsum.photos/id/1011/200/200" alt="Avatar 2" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="info">
+            <h3>Arjun Mehta</h3>
+            <p>Product Designer — focused on delightful micro-interactions.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="card card-3">
+        <div class="photo">
+          <img src="https://picsum.photos/id/1027/1200/800" alt="Profile photo 3">
+        </div>
+        <div class="meta">
+          <div class="avatar" aria-hidden="true">
+            <img src="https://picsum.photos/id/1027/200/200" alt="Avatar 3"
