@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filter Comparison Layout</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: #f5f7fa;
+      padding: 30px;
+      color: #222;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #0c3c78;
+    }
+
+    .compare {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .img-box {
+      background: white;
+      border-radius: 12px;
+      padding: 15px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      transition: transform .3s ease;
+      width: 45%;
+      min-width: 260px;
+    }
+
+    .img-box:hover {
+      transform: translateY(-6px);
+    }
+
+    .img-box img {
+      width: 100%;
+      border-radius: 10px;
+      height: 280px;
+      object-fit: cover;
+      transition: filter 0.4s ease;
+    }
+
+    .filtered img {
+      filter: brightness(60%);
+    }
+
+    .filtered:hover img {
+      filter: none;
+    }
+
+    .caption {
+      margin-top: 10px;
+      text-align: center;
+      color: #666;
+      font-size: 0.95rem;
+    }
+
+    /* Responsive — Below 700px stack vertically */
+    @media (max-width: 700px) {
+      .compare {
+        flex-direction: column;
+        align-items: center;
+      }
+      .img-box {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Before & After — Filter Comparison</h1>
+
+  <section class="compare">
+
+    <figure class="img-box">
+      <img src="https://picsum.photos/id/1025/800/500" alt="Before">
+      <figcaption class="caption">Original Image</figcaption>
+    </figure>
+
+    <figure class="img-box filtered">
+      <img src="https://picsum.photos/id/1025/800/500" alt="After Filter">
+      <figcaption class="caption">Brightness filter applied — hover to remove</figcaption>
+    </figure>
+
+  </section>
+
+</body>
+</html>
