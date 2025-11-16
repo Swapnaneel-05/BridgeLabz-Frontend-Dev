@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Responsive Image Filter Gallery</title>
+  <style>
+    :root{
+      --gap: 16px;
+      --caption-color: #333;
+      --bg: #fafbfd;
+    }
+
+    /* Page baseline */
+    html,body{
+      height:100%;
+      margin:0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: var(--bg);
+      color: #111;
+    }
+
+    .wrap{
+      max-width:1200px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    h1{
+      margin:0 0 18px;
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      text-align:center;
+    }
+
+    p.lead{
+      text-align:center;
+      margin:0 0 28px;
+      color:#444;
+    }
+
+    /* Grid with auto-fit minmax */
+    .gallery{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--gap);
+      align-items: start;
+    }
+
+    figure{
+      margin:0;
+      background:#fff;
+      border-radius:10px;
+      overflow:hidden;
+      box-shadow: 0 6px 18px rgba(12,20,30,0.06);
+      transition: transform .25s ease;
+      display:flex;
+      flex-direction:column;
+    }
+
+    figure:hover{
+      transform: translateY(-6px);
+    }
+
+    /* Image container keeps aspect and allows overlay of filter */
+    .thumb{
+      position:relative;
+      width:100%;
+      height:0;
+      padding-bottom:66.66%; /* 3:2 ratio */
+      overflow:hidden;
+    }
+
+    .thumb img{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      transition: filter .35s ease, transform .35s ease;
+      will-change: filter, transform;
+    }
+
+    /* Different filters for each image */
+    .f-blur img       { filter: blur(3px); }
+    .f-grayscale img  { filter: grayscale(100%); }
+    .f-sepia img      { filter: sepia(80%); }
+    .f-bright img     { filter: brightness(0.6); }
+    .f-contrast img   { filter: contrast(150%); }
+    .f-hue img        { filter: hue-rotate(90deg) saturate(120%); }
+
+    /* Remove filter on hover (smooth) */
+    figure:hover img{
+      filter: none !important;
+      transform: scale(1.03);
+    }
+
+    figcaption{
+      padding: 12px 14px;
+      font-size: .95rem;
+      color: var(--caption-color);
+      background: #fff;
+      border-top: 1px solid rgba(0,0,0,0.04);
+    }
+
+    /* Responsive: stack in one column below 600px */
+    @media (max-width: 600px){
+      .gallery{
+        grid-template-columns: 1fr;
+      }
+      .wrap{
+        padding: 12px;
+      }
+      figcaption{
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Responsive Image Filter Gallery</h1>
+    <p class="lead">Hover any image to remove the filter (smooth transition). Grid collapses to one column below 600px.</p>
+
+    <section class="gallery" aria-label="Image filter gallery">
+      <figure class="f-blur">
+        <div class="thumb">
+          <img src="https://picsum.photos/id/1015/800/533" alt="Mountain landscape">
+        </div>
+        <figcaption>Blur effect — mountains</figcaption>
+      </figure>
+
+      <figure class="f-grayscale">
+        <div class="thumb">
+          <img src="https://picsum.photos/id/1025/800/533" alt="Black and white portrait">
+        </div>
+        <figcaption>Grayscale — portrait</figcaption>
+      </figure>
+
+      <figure class="f-sepia">
+        <div class="thumb">
+          <img src="https://picsum.photos/id/1050/800/533" alt="Warm landscape">
+        </div>
+        <figcaption>Sepia — warm tones</figcaption>
+      </figure>
+
+      <figure class="f-bright">
+        <div class="thumb">
+          <img src="https://picsum.photos/id/1011/800/533" alt="Coastal view">
+        </div>
+        <figcaption>Brightness reduced — coastal</figcaption>
+      </figure>
+
+      <figure class="f-contrast">
+        <div class="thumb">
+          <img src="https://picsum.photos/id/1003/800/533" alt="Desert scene">
+        </div>
+        <figcaption>High contrast — desert</figcaption>
+      </figure>
+
+      <figure class="f-hue">
+        <div class="thumb">
+          <img src="https://picsum.photos/id/1035/800/533" alt="Forest scene">
+        </div>
+        <figcaption>Hue rotated — forest</figcaption>
+      </figure>
+    </section>
+  </div>
+</body>
+</html>
